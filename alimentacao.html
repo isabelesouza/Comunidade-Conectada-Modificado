@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Banco de Alimentos e Nutrição - Comunidade Conectada</title>
+  <link rel="stylesheet" href="css/alimentacao.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <a href="index.html"><img class="platform-icon" src="imagens/icone_plataforma.png" alt="Ícone da Plataforma"></a>
+    <h1>Banco de Alimentos e Nutrição</h1>
+    <nav>
+      <ul>
+        <li><a href="#doacoes" class="tab-link" data-tab="doacoes">Doações</a></li>
+        <li><a href="#distribuicao" class="tab-link" data-tab="distribuicao">Distribuição</a></li>
+        <li><a href="#educacao" class="tab-link" data-tab="educacao">Educação Nutricional</a></li>
+        <li><a href="#receitas" class="tab-link" data-tab="receitas">Receitas Saudáveis</a></li>
+        <li><a href="#sos" class="tab-link" data-tab="sos">S.O.S Periferia</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="doacoes" class="tab-content">
+      <h2>Doações de Alimentos</h2>
+      <div class="gallery">
+        <img src="imagens/doacao1.png" alt="Imagem de doação">
+        <img src="imagens/doacao2.png" alt="Imagem de doação">
+  
+      </div>
+      <div class="contact-card">
+        <p><span class="icon">📞</span> Whatsapp: (85) 98965-1386</p>
+        <p><span class="icon">✉️</span> E-mail: <a href="mailto:contato.sos.periferia@gmail.com">contato.sos.periferia@gmail.com</a></p>
+        <p><span class="icon">📸</span> Instagram: <a href="https://instagram.com/sos.periferia" target="_blank">@sos.periferia</a></p>
+        <div class="donation-form">
+          <form>
+            <div>
+              <input type="radio" id="need-food" name="donation-type" value="needs" required>
+              <label for="need-food">Estou precisando de alimentos</label>
+            </div>
+            <div>
+              <input type="radio" id="have-food" name="donation-type" value="has" required>
+              <label for="have-food">Tenho alimentos sobrando</label>
+            </div>
+            <div>
+              <label for="description">Descreva sua necessidade ou doação:</label>
+              <textarea id="description" name="description"></textarea>
+            </div>
+            <div>
+              <label for="contact-info">Forma de contato:</label>
+              <input type="text" id="contact-info" name="contact-info" placeholder="Whatsapp, E-mail, etc." required>
+            </div>
+            <div>
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
+        </div>
+        
+    </section>
+    <section id="distribuicao" class="tab-content">
+      <h2>Distribuição de Alimentos</h2>
+      <p>Coordenamos esforços para distribuir refeições e cestas básicas para comunidades vulneráveis. Nossa equipe garante que os alimentos cheguem com qualidade e segurança a quem mais precisa.</p>
+      <div class="gallery">
+        <img src="imagens/marmita1.png" alt="Distribuição de Marmitas">
+        <img src="imagens/marmita2.png" alt="Distribuição de Marmitas">
+        <img src="imagens/marmita3.png" alt="Distribuição de Marmitas">
+        <img src="imagens/marmita4.png" alt="Distribuição de Marmitas">
+        <img src="imagens/marmita5.png" alt="Distribuição de Marmitas">
+        <img src="imagens/marmita6.png" alt="Distribuição de Marmitas">
+        <img src="imagens/marmita7.png" alt="Distribuição de Marmitas">
+        <img src="imagens/marmita8.png" alt="Distribuição de Marmitas">
+        <img src="imagens/marmita9.png" alt="Distribuição de Marmitas">
+      </div>
+      <div class="card">
+        <p>Somos uma Unidade Gerenciadora do Programa Ceará Sem Fome. Com muita dedicação e amor gerenciamos 62 cozinhas da região metropolitana de Fortaleza: Maracanaú, Maranguape, Itaitinga, Pacatuba e Guaiúba. Que juntas produzem aproximadamente 102.000 mil refeições por mês para 5.100 pessoas.</p>
+      </div>
+      <div class="card">
+        <p>Para mais informações sobre como ser um doador ou entrar em contato sobre as cozinhas voluntárias mais próximas de você, visite <a href="https://linkybio.com.br/sosperiferia" target="_blank">este link</a>.</p>
+      </div>
+    </section>
+    
+    <section id="educacao" class="tab-content">
+      <div class="educacao-container">
+        <div class="educacao-content">
+          <h2>Educação Nutricional</h2>
+          <p>Fornecemos recursos educacionais sobre nutrição e segurança alimentar. Promovemos workshops e palestras para conscientizar sobre a importância de uma alimentação saudável e balanceada.</p>
+          <h3>Dicas de Alimentação Saudável:</h3>
+          <ul>
+            <li><span class="emoji">&#x1F4CC;</span> Inclua uma variedade de frutas e vegetais na sua dieta diária.</li>
+            <li><span class="emoji">&#x1F35A;</span> Opte por grãos integrais em vez de refinados.</li>
+            <li><span class="emoji">&#x1F41F;</span> Consuma proteínas magras, como peixe, frango e leguminosas.</li>
+            <li><span class="emoji">&#x1F4A7;</span> Beba muita água ao longo do dia.</li>
+            <li><span class="emoji">&#x1F371;</span> Evite alimentos processados e ricos em açúcares e gorduras saturadas.</li>
+          </ul>
+        </div>
+        <div class="educacao-card">
+          <div class="card">
+            <span class="icon">&#x1F468;&#x200D;&#x1F393;</span>
+            <h4>Fale com um Nutricionista</h4>
+          </div>
+          <div class="card">
+            <span class="icon">&#x1F4C5;</span>
+            <h4>Calendário de Palestras e Workshops</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="receitas" class="tab-content">
+      <h2>Receitas Saudáveis</h2>
+      <div class="receitas-container">
+        <div class="receita">
+          <div class="receita-header">
+            <img src="imagens/salada_grao.png" alt="Salada de Grão de Bico">
+            <div class="receita-info">
+              <h3>Salada de Grão de Bico</h3>
+              <p><span class="icon">&#9200;</span> 20 minutos</p>
+            </div>
+          </div>
+          <p>Uma receita simples e nutritiva.</p>
+          <h4>Ingredientes:</h4>
+          <ul>
+            <li>1 xícara de grão de bico cozido</li>
+            <li>1 tomate picado</li>
+            <li>1 pepino picado</li>
+            <li>1/2 cebola roxa picada</li>
+            <li>1/4 xícara de salsinha picada</li>
+            <li>Suco de 1 limão</li>
+            <li>2 colheres de sopa de azeite de oliva</li>
+            <li>Sal e pimenta a gosto</li>
+          </ul>
+          <br><br>
+          <h4>Modo de Preparo:</h4>
+          <p>Misture todos os ingredientes em uma tigela grande. Tempere com o suco de limão, azeite, sal e pimenta. Sirva em seguida.</p>
+        </div>
+        <div class="receita">
+          <div class="receita-header">
+            <img src="imagens/sopa_legumes.png" alt="Sopa de Legumes">
+            <div class="receita-info">
+              <h3>Sopa de Legumes Econômica</h3>
+              <p><span class="icon">&#9200;</span> 45 minutos</p>
+            </div>
+          </div>
+          <p>Uma receita fácil, nutritiva e acessível.</p>
+          <h4>Ingredientes:</h4>
+          <ul>
+            <li>2 batatas médias</li>
+            <li>2 cenouras</li>
+            <li>1 cebola</li>
+            <li>2 dentes de alho</li>
+            <li>1 chuchu</li>
+            <li>1 abobrinha pequena</li>
+            <li>1 tomate</li>
+            <li>1 litro de água</li>
+            <li>Sal e pimenta a gosto</li>
+            <li>1 fio de óleo</li>
+          </ul>
+          <br><br>
+          <h4>Modo de Preparo:</h4>
+          <p>
+            1. Descasque e corte os legumes em pedaços pequenos.<br>
+            2. Em uma panela grande, aqueça o óleo e refogue a cebola e o alho até dourarem.<br>
+            3. Adicione os legumes e refogue por alguns minutos.<br>
+            4. Adicione a água, sal e pimenta. Deixe cozinhar até que os legumes estejam macios.<br>
+            5. Use um mixer para triturar os legumes até obter um creme homogêneo, se desejar.<br>
+            6. Sirva quente.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="sos" class="tab-content">
+      <h2>Instituto S.O.S Periferia</h2>
+      <p>Em parceria com o Instituto S.O.S Periferia, coordenamos a distribuição de alimentos e promovemos a conscientização sobre segurança alimentar. Juntos, trabalhamos para reduzir a fome e melhorar a nutrição nas comunidades periféricas.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2024 Comunidade Conectada. Todos os direitos reservados.</p>
+  </footer>
+  <script src="js/alimentacao.js"></script>
+</body>
+</html>
