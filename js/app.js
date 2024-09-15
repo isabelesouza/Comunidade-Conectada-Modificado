@@ -63,9 +63,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-// Função para login com JWT
-async function loginWithJWT(email, password) {
+// Função para autenticação com JWT, além do sessionToken do Parse
+async function loginWithParseAndJWT(email, password) {
   try {
+    // Login usando Parse para obter o sessionToken
+    const user = await Parse.User.logIn(email, password);
+    const sessionToken = user.getSessionToken();
+
+    console.log('Login com Parse bem-sucedido! sessionToken:', sessionToken);
+
+    // Após o login do Parse, solicitar um token JWT do seu servidor
     const response = await fetch('https://your-auth-api.com/login', {
       method: 'POST',
       headers: {
@@ -73,46 +80,37 @@ async function loginWithJWT(email, password) {
       },
       body: JSON.stringify({ email, password })
     });
-    
+
     if (!response.ok) {
-      throw new Error('Erro ao autenticar usuário');
+      throw new Error('Erro ao autenticar usuário com JWT');
     }
 
     const data = await response.json();
-    const token = data.token;
-    
-    // Armazenar o token JWT no localStorage para ser utilizado nas próximas requisições
-    localStorage.setItem('jwtToken', token);
+    const jwtToken = data.token;
 
-    return data;
+    // Armazenar o sessionToken do Parse e o JWT no localStorage
+    localStorage.setItem('sessionToken', sessionToken);
+    localStorage.setItem('jwtToken', jwtToken);
+
+    console.log('Login bem-sucedido! Token JWT armazenado:', jwtToken);
+    return { sessionToken, jwtToken };
   } catch (error) {
     console.error('Erro ao fazer login:', error);
   }
 }
 
-// Função para verificar o token JWT em cada requisição protegida
-async function fetchProtectedData() {
-  const token = localStorage.getItem('jwtToken');
-  if (!token) {
-    console.error('Token JWT não encontrado');
-    return;
-  }
+// Substituindo a função de login original para usar Parse e JWT juntos
+document.addEventListener('DOMContentLoaded', (event) => {
+  const formLogin = document.getElementById('formLogin');
+  if (formLogin) {
+    formLogin.addEventListener('submit', async function(event) {
+      event.preventDefault();
 
-  try {
-    const response = await fetch('https://your-protected-api.com/data', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
+      const email = document.getElementById('email').value;
+      const senha = document.getElementById('senha').value;
+
+      // Chamar a nova função de login usando Parse e JWT
+      await loginWithParseAndJWT(email, senha);
     });
-    
-    if (!response.ok) {
-      throw new Error('Erro ao buscar dados protegidos');
-    }
-
-    const data = await response.json();
-    console.log('Dados protegidos:', data);
-  } catch (error) {
-    console.error('Erro ao buscar dados protegidos:', error);
   }
-}
+});
