@@ -1,0 +1,95 @@
+/* Importação da fonte Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+    position: relative;
+  }
+  header img.platform-icon {
+    width: 200px; 
+    height: auto; 
+    margin-right: 10px; 
+    margin-top: 10px; 
+  }
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f3f0ff; /* Lilás pastel */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #dcd6f7; /* Lilás pastel mais claro */
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #6a0dad; /* Roxo */
+  margin: 0;
+  margin-bottom: 20px; 
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+.saude-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #6a0dad; /* Roxo */
+  border-radius: 10px;
+  padding: 20px;
+  width: calc(50% - 20px); 
+  box-sizing: border-box;
+}
+
+.card h2 {
+  color: #6a0dad; /* Roxo */
+  margin-bottom: 10px; 
+}
+
+.card p {
+  color: #333;
+  margin-bottom: 20px; 
+}
+
+.card a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #6a0dad; /* Roxo */
+  color: #fff; /* Branco */
+  border-radius: 5px; /* Bordas levemente arredondadas */
+  transition: background-color 0.3s;
+}
+
+.card a:hover {
+  background-color: #531e8d; /* Roxo mais escuro */
+}
+
+footer {
+  background-color: #dcd6f7; /* Lilás pastel mais claro */
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}

@@ -1,0 +1,209 @@
+/* Importação da fonte Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header {
+  position: relative;
+}
+header img.platform-icon {
+  width: 200px; 
+  height: auto; 
+  margin-right: 10px; 
+  margin-top: 10px; 
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f3f0ff; /* Lilás pastel */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #dcd6f7; /* Lilás pastel mais claro */
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #6a0dad; /* Roxo */
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Cor de fundo com transparência */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 10px;
+  text-align: center;
+  width: 150px; /* Largura do quadrado */
+  height: 150px; /* Altura do quadrado */
+  transition: background-color 0.3s;
+  box-sizing: border-box; 
+}
+
+.icon-container:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.icon {
+  width: 80px; 
+  height: 80px;
+  margin-bottom: 10px; 
+}
+
+.icon-container span {
+  color: #6a0dad; /* Roxo */
+  font-size: 14px; /* Tamanho do texto */
+  text-align: center;
+  display: block; 
+  max-width: 100%; 
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+main h2 {
+  margin-bottom: 20px;
+}
+
+main p {
+  margin-bottom: 20px;
+}
+/* Estilos para a seção de descrição */
+.descricao {
+  margin-bottom: 40px;
+}
+
+.descricao h2 {
+  color: #6a0dad; /* Roxo */
+}
+
+.descricao p {
+  color: #333; /* Cor do texto padrão */
+}
+
+/* Estilos para a seção de perguntas e respostas */
+.perguntas-respostas {
+  border: 2px solid #6a0dad; /* Borda roxa */
+  border-radius: 10px; /* Bordas arredondadas */
+  padding: 20px;
+}
+
+.perguntas-respostas h2 {
+  color: #6a0dad; /* Roxo */
+  margin-bottom: 20px;
+}
+
+.pergunta {
+  margin-bottom: 20px;
+}
+
+.pergunta-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pergunta-header h3 {
+  color: #333; /* Cor do texto padrão */
+}
+
+.resposta p {
+  color: #333; /* Cor do texto padrão */
+}
+
+
+footer {
+  background-color: #dcd6f7; /* Lilás pastel mais claro */
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Estilos para os formulários */
+form {
+  background-color: #fff;
+  border: 2px solid #6a0dad;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+  display: block;
+  color: #6a0dad; /* Roxo */
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #6a0dad; /* Roxo */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #531e8d; /* Roxo mais escuro */
+}
+
+
+/* Responsividade */
+/* Responsividade */
+@media (max-width: 600px) {
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+  }
+
+  .icon-container {
+    width: 150px; /* Largura fixa dos ícones */
+    height: 150px; /* Altura fixa dos ícones */
+    margin: 10px; /* Espaçamento entre os ícones */
+  }
+}

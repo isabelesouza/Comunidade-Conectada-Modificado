@@ -1,0 +1,146 @@
+/* Importação da fonte Lato */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  position: relative;
+}
+header img.platform-icon {
+  width: 200px; 
+  height: auto; 
+  margin-right: 10px; 
+  margin-top: 10px; 
+}
+body {
+  font-family: 'Lato', Arial, sans-serif;
+  background-color: #f3f0ff; /* Lilás pastel */
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #dcd6f7; /* Lilás pastel mais claro */
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  color: #6a0dad; /* Roxo */
+  margin: 0;
+  margin-bottom: 20px; 
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  flex: 1 1 200px; 
+}
+
+nav a {
+  display: block;
+  text-decoration: none;
+  padding: 10px 20px;
+  background-color: #6a0dad; /* Roxo */
+  color: #fff;
+  border-radius: 10px; /* Bordas levemente arredondadas */
+  transition: background-color 0.3s;
+  text-align: center;
+}
+
+nav a:hover {
+  background-color: #531e8d; /* Roxo mais escuro */
+}
+
+main {
+  padding: 20px;
+  text-align: center;
+}
+
+main h2 {
+  margin-bottom: 20px;
+}
+
+main p {
+  margin-bottom: 20px;
+}
+
+/* Estilos para a seção de doações */
+
+.contact-card,
+.donation-form,
+#distribuicao,
+.educacao-card {
+  background-color: #fff;
+  border: 2px solid #6a0dad;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #6a0dad;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: calc(33.33% - 20px);
+  vertical-align: top;
+}
+
+.card p,
+.educacao-content p,
+#distribuicao p {
+  color: #333;
+}
+
+.card a,
+.contact-card a {
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6a0dad;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.card a:hover,
+.contact-card a:hover {
+  background-color: #531e8d; /* Roxo mais escuro */
+}
+
+footer {
+  background-color: #dcd6f7; /* Lilás pastel mais claro */
+  padding: 10px;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .card {
+    width: calc(100% - 20px); /* Define a largura total para 100% com espaçamento */
+    margin-bottom: 20px; /* Adiciona espaçamento entre os cards */
+  }
+}
