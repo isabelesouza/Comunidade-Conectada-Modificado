@@ -49,68 +49,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
       const senha = document.getElementById('loginSenha').value;
 
       try {
+        // 1. Login usando Parse para obter o sessionToken
         const user = await Parse.User.logIn(email, senha);
+        const sessionToken = user.getSessionToken();
         alert(`Bem-vindo, ${user.get('nome')}!`);
+
+        // 2. Fazer requisição para a API JWT para obter o token JWT
+        const response = await fetch('https://turbo-space-lamp-rjqw445r9j5fw5vr-3000.app.github.dev/generate-jwt', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password: senha })
+        });
+
+        if (!response.ok) {
+          throw new Error('Erro ao autenticar usuário com JWT');
+        }
+
+        const data = await response.json();
+        const jwtToken = data.token;
+
+        // 3. Armazenar o sessionToken do Parse e o JWT no localStorage
+        localStorage.setItem('sessionToken', sessionToken);
+        localStorage.setItem('jwtToken', jwtToken);
+
+        console.log('Login bem-sucedido! Token JWT armazenado:', jwtToken);
+
         loginForm.reset(); // Limpar os campos do formulário
         window.location.href = 'index.html'; // Redirecionar para a página inicial
+
       } catch (error) {
         alert('Erro no login: ' + error.message);
       }
-    });
-  }
-});
-
-
-
-
-// Função para autenticação com JWT, além do sessionToken do Parse
-async function loginWithParseAndJWT(email, password) {
-  try {
-    // Login usando Parse para obter o sessionToken
-    const user = await Parse.User.logIn(email, password);
-    const sessionToken = user.getSessionToken();
-
-    console.log('Login com Parse bem-sucedido! sessionToken:', sessionToken);
-
-    // Após o login do Parse, solicitar um token JWT do seu servidor
-    const response = await fetch('https://your-auth-api.com/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ email, password })
-    });
-
-    if (!response.ok) {
-      throw new Error('Erro ao autenticar usuário com JWT');
-    }
-
-    const data = await response.json();
-    const jwtToken = data.token;
-
-    // Armazenar o sessionToken do Parse e o JWT no localStorage
-    localStorage.setItem('sessionToken', sessionToken);
-    localStorage.setItem('jwtToken', jwtToken);
-
-    console.log('Login bem-sucedido! Token JWT armazenado:', jwtToken);
-    return { sessionToken, jwtToken };
-  } catch (error) {
-    console.error('Erro ao fazer login:', error);
-  }
-}
-
-// Substituindo a função de login original para usar Parse e JWT juntos
-document.addEventListener('DOMContentLoaded', (event) => {
-  const formLogin = document.getElementById('formLogin');
-  if (formLogin) {
-    formLogin.addEventListener('submit', async function(event) {
-      event.preventDefault();
-
-      const email = document.getElementById('email').value;
-      const senha = document.getElementById('senha').value;
-
-      // Chamar a nova função de login usando Parse e JWT
-      await loginWithParseAndJWT(email, senha);
     });
   }
 });
