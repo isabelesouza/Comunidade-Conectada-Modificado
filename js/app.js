@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       user.set("telefone", telefone);
       user.set("endereco", endereco);
 
-      try {
+      try { 
         await user.signUp();
         alert('Cadastro realizado com sucesso!');
         formCadastro.reset(); // Limpar os campos do formulário
