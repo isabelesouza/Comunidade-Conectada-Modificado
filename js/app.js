@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         alert(`Bem-vindo, ${user.get('nome')}!`);
 
         // 2. Fazer requisição para a API JWT para obter o token JWT
-        const response = await fetch('https://turbo-space-lamp-rjqw445r9j5fw5vr-3000.app.github.dev/generate-jwt', {
+        const response = await fetch('https://jwt-api-five.vercel.app/generate-jwt', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
